@@ -1,6 +1,6 @@
 # SwayConfig
 
-My config for sway
+My config for swayfx
 
 ## Dependencies
 
@@ -14,3 +14,8 @@ My config for sway
 - pulse audio (pactl for brightness)
 - brightnessctl (brightness control)
 - grim, slurp (screenshort)
+
+
+## Notice
+
+If used in `sway`, just remove the blurfx.conf.
