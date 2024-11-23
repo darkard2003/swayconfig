@@ -1,10 +1,11 @@
+include sysvar.conf
 include vars.conf
 include idle.conf
 include touchpad.conf
 include keybinds.conf
-include sysvar.conf
 include exec.conf
 include decoraion.conf
+include blurfx.conf
 
 
 bar {
