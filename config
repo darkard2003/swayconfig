@@ -1,3 +1,4 @@
+include display.conf
 include sysvar.conf
 include vars.conf
 include idle.conf
@@ -6,6 +7,7 @@ include keybinds.conf
 include exec.conf
 include decoraion.conf
 include blurfx.conf
+include windowrules.conf
 
 
 bar {
