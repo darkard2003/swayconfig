@@ -8,6 +8,7 @@ include exec.conf
 include decoraion.conf
 include blurfx.conf
 include windowrules.conf
+include colors.conf
 
 
 bar {
