@@ -1,6 +1,7 @@
 include display.conf
 include sysvar.conf
 include vars.conf
+include desktoprules.conf
 include idle.conf
 include touchpad.conf
 include keybinds.conf
@@ -9,6 +10,7 @@ include decoraion.conf
 include blurfx.conf
 include windowrules.conf
 include colors.conf
+include custom.d\*.conf
 
 
 bar {
