@@ -12,9 +12,6 @@ include windowrules.conf
 include colors.conf
 include custom.d\*.conf
 
-
-bar {
-    swaybar_command waybar
-}
+bar swaybar_command waybar
 
 xwayland enable
