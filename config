@@ -10,8 +10,10 @@ include decoraion.conf
 include blurfx.conf
 include windowrules.conf
 include colors.conf
-include custom.d\*.conf
+include custom.d/*.conf
 
 bar swaybar_command waybar
 
 xwayland enable
+
+# include experimental/*.conf
