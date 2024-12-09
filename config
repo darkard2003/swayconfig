@@ -7,7 +7,6 @@ include touchpad.conf
 include keybinds.conf
 include exec.conf
 include decoraion.conf
-include blurfx.conf
 include windowrules.conf
 include colors.conf
 include custom.d/*.conf
