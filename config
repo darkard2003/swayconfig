@@ -14,5 +14,3 @@ include custom.d/*.conf
 bar swaybar_command waybar
 
 xwayland enable
-
-# include experimental/*.conf
