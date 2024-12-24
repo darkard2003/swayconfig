@@ -8,9 +8,18 @@ openScreenshot(){
     kitty --app-id="user-dialog" --config="/dev/null" -e bash -c "kitten icat '$1'; read -p 'press enter to close...'" 
 }
 
-notify_and_open() {
+copy_file(){
+    # Read the image file and copy its contents to clipboard
+    cat "$1" | wl-copy --type image/png
+}
+
+notify_actions() {
+    if [ ! -f "$1" ]; then
+      notify-send "Screenshot" "Failed to take screenshot"
+      exit 1
+    fi
+    copy_file "$1"
     local filepath="$1"
-    xclip "$filepath"
     action=$(notify-send -A "open=Open" "Screenshot" "Screenshot saved to $filepath")
     if [ "$action" = "open" ]; then
         openScreenshot "$filepath"
@@ -19,20 +28,20 @@ notify_and_open() {
 
 take_screenshot() {
     local mode="$1"
-    local filepath="${PICTURES_DIR}/Screenshots/$(date -Iseconds)_grim.png"
+    local filepath="${PICTURES_DIR}/Screenshots"
+    local filename="$filepath/screenshot_$(date +%Y-%m-%d_%H-%M-%S)_grim.png"
+
+    if [ ! -d "$filepath" ]; then
+      mkdir -p "$filepath"
+    fi
     
     if [ "$mode" = "full" ]; then
-        grim "$filepath"
+        grim "$filename"
     else
-        grim -g "$(slurp)" "$filepath"
+        grim -g "$(slurp)" "$filename"
     fi
 
-    if [ -f "$filepath" ]; then
-        notify_and_open "$filepath"
-    else
-        notify-send "Screenshot failed"
-        return 1
-    fi
+    notify_actions "$filename"
 }
 
 # Main
