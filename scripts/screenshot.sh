@@ -19,7 +19,7 @@ notify_and_open() {
 
 take_screenshot() {
     local mode="$1"
-    local filepath="${PICTURES_DIR}/$(date -Iseconds)_grim.png"
+    local filepath="${PICTURES_DIR}/Screenshots/$(date -Iseconds)_grim.png"
     
     if [ "$mode" = "full" ]; then
         grim "$filepath"
