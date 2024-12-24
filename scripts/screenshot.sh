@@ -5,14 +5,14 @@ PICTURES_DIR="$(xdg-user-dir PICTURES)"
 
 # Helper Functions
 openScreenshot(){
-    kitty --app-id="user-dialog" -e bash -c "kitten icat '$1'; read -p 'press enter to close...'" 
+    kitty --app-id="user-dialog" --config="/dev/null" -e bash -c "kitten icat '$1'; read -p 'press enter to close...'" 
 }
 
 notify_and_open() {
     local filepath="$1"
     xclip "$filepath"
-    notify-send -A "open=Open" "Screenshot" "Screenshot saved to $filepath" && \
-    if [ "$?" = "0" ]; then
+    action=$(notify-send -A "open=Open" "Screenshot" "Screenshot saved to $filepath")
+    if [ "$action" = "open" ]; then
         openScreenshot "$filepath"
     fi
 }
