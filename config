@@ -1,6 +1,7 @@
 include display.conf
 include sysvar.conf
 include vars.conf
+include custom.d/vars.conf
 include desktoprules.conf
 include idle.conf
 include touchpad.conf
